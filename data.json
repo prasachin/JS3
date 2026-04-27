@@ -1,0 +1,7 @@
+{
+  "Person": {
+    "name": "MyName",
+    "age": 30,
+    "hobbies": ["reading", "coding", "traveling"]
+  }
+}
