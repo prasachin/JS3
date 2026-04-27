@@ -341,3 +341,20 @@
 // }
 
 // document.body.appendChild(frag);
+
+// task1
+function fetchData() {
+  //   let start = Date.now();
+  //   while (Date.now() - start < 5000) {
+  //     // Simulating a long-running task
+  //   }
+  setTimeout(() => {
+    console.log("1. data fetched");
+  }, 5000);
+}
+
+fetchData();
+
+// task2
+console.log("2. ready to execute");
+let data =  fetch();
