@@ -343,18 +343,179 @@
 // document.body.appendChild(frag);
 
 // task1
-function fetchData() {
-  //   let start = Date.now();
-  //   while (Date.now() - start < 5000) {
-  //     // Simulating a long-running task
-  //   }
+// function fetchData() {
+//   //   let start = Date.now();
+//   //   while (Date.now() - start < 5000) {
+//   //     // Simulating a long-running task
+//   //   }
+//   setTimeout(() => {
+//     console.log("1. data fetched");
+//   }, 5000);
+// }
+
+// fetchData();
+
+// // task2
+// console.log("2. ready to execute");
+// let data =  fetch();
+// function test() {
+//   console.log("1. test function executed");
+// }
+// setTimeout(test, 0);
+
+// console.log("2. Hey main thread is not blocked");
+// function sayGoodbye() {
+//   console.log("Goodbye");
+// }
+
+// function greet(name, sayGoodbye) {
+//   console.log("Hello, Good morning " + name);
+//   sayGoodbye();
+//   sayGoodbye();
+// }
+
+// greet("Sachin", sayGoodbye);
+
+// flipkart
+// let users = GetUsers();
+// let orders = GetOrders(users[0]);
+// let paymentStatus = makePayment(orders);
+
+// GetUsers(function (users) {
+//   GetOrders(users[0], function (orders) {
+//     makePayment(orders, function (paymentStatus) {
+//       console.log("Payment Status: " + paymentStatus);
+//     });
+//   });
+// });
+
+// err first pattern
+// apiCall("url", function (err, response) {
+//   if (err) {
+//     console.error("Error fetching API:", err);
+//     return;
+//   }
+//   // Handle the API response here
+// });
+
+// let result = fetch("https://dummyjson.com/users");
+
+// console.log(result);
+
+// GetUsers(function (users) {
+//   GetOrders(users[0], function (orders) {
+//     makePayment(orders, function (paymentStatus) {
+//       console.log("Payment Status: " + paymentStatus);
+//     });
+//   });
+// });
+
+// let usersPromise = GetUsers();
+
+// let ordersPromise = usersPromise.then((users) => {
+//   return GetOrders(users[0]);
+// });
+// let paymentStatusPromise = ordersPromise.then((orders) => {
+//   return makePayment(orders);
+// });
+// paymentStatusPromise.then((paymentStatus) => {
+//   console.log("Payment Status: " + paymentStatus);
+// });
+
+// let result = fetch("https://dummyjson.com/users");
+
+// console.log(result);
+// let res = result
+//   .then((res) => {
+//     let datap = res.json();
+//     //   console.log(datap);
+//     datap.then((data) => {
+//       // console.log(data.users);
+//     });
+//   });
+
+// create new promise in js
+// let promise0 = new Promise((resolve, reject) => {
+//   return resolve("Promise resolved for zero promise");
+// });
+// // console.log(promise0);
+
+// let promise = new Promise((resolve, reject) => {
+//   return reject(promise0);
+// });
+
+// console.log(promise);
+
+// promise
+//   .then((res) => {
+//     console.log("Promise resolved with data: " + res);
+//   })
+//   .catch((err) => {
+//     console.log("Promise rejected with error 1st then: " + err);
+//   })
+//   .then((res) => {
+//     console.log("This will execute after the first then");
+//   })
+//   .catch((err) => {
+//     console.log("Promise rejected with error 2nd then: " + err);
+//   });
+
+// console.log("This will execute before the promise is resolved or rejected");
+
+// promise combinations
+
+let p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("1. data fetched");
-  }, 5000);
-}
+    reject("Promise 1 resolved");
+  }, 4000);
+});
 
-fetchData();
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Promise 2 rejected");
+  }, 2000);
+});
 
-// task2
-console.log("2. ready to execute");
-let data =  fetch();
+let p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Promise 3 resolved");
+  }, 6000);
+});
+
+let p4 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Promise 4 resolved");
+  }, 8000);
+});
+
+// Promise.all([p1, p2, p3, p4])
+//   .then((result) => {
+//     console.log("All promises resolved: ", result);
+//   })
+//   .catch((err) => {
+//     console.log("One or more promises rejected", err);
+//   });
+
+// Promise.allSettled([p1, p2, p3, p4])
+//   .then((result) => {
+//     console.log("All promises settled: ", result);
+//   })
+//   .catch((err) => {
+//     console.log("One or more promises rejected", err);
+//   });
+
+// Promise.race([p1, p2, p3, p4])
+//   .then((result) => {
+//     console.log("First promise settled: ", result);
+//   })
+//   .catch((err) => {
+//     console.log("All promises settled: ", err);
+//   });
+
+// Promise.any([p1, p2, p3, p4])
+//   .then((result) => {
+//     console.log("First promise resolved: ", result);
+//   })
+//   .catch((err) => {
+//     console.log("All promises rejected: ", err);
+//   });
