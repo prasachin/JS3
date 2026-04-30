@@ -464,29 +464,29 @@
 
 // promise combinations
 
-let p1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    reject("Promise 1 resolved");
-  }, 4000);
-});
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject("Promise 1 resolved");
+//   }, 4000);
+// });
 
-let p2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    reject("Promise 2 rejected");
-  }, 2000);
-});
+// let p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Promise 2 resolved");
+//   }, 2000);
+// });
 
-let p3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    reject("Promise 3 resolved");
-  }, 6000);
-});
+// let p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject("Promise 3 resolved");
+//   }, 6000);
+// });
 
-let p4 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    reject("Promise 4 resolved");
-  }, 8000);
-});
+// let p4 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject("Promise 4 resolved");
+//   }, 8000);
+// });
 
 // Promise.all([p1, p2, p3, p4])
 //   .then((result) => {
@@ -519,3 +519,34 @@ let p4 = new Promise((resolve, reject) => {
 //   .catch((err) => {
 //     console.log("All promises rejected: ", err);
 //   });
+
+// function normalFunction() {
+//   console.log("This is a normal function");
+//   return "return1";
+// }
+
+// let res1 = normalFunction();
+// console.log(res1);
+// async function asyncFunction() {
+//   // console.log("This is an async function");
+//   return p2;
+// }
+
+// async function printData() {
+//   let res2 = await asyncFunction();
+//   // res2.then((res) => {
+//   //   console.log(res);
+//   // });
+//   console.log(res2);
+//   console.log("Please execute me!");
+// }
+// printData();
+// console.log("Please");
+// let res2 = await asyncFunction();/wrng
+// console.log(res2);/wrng
+// console.log(res2);
+// res2.then((result) => {
+//   console.log(result);
+// });
+
+// HTTP fundamentals
